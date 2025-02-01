@@ -5,8 +5,9 @@ class CustomButton extends StatelessWidget {
   final VoidCallback onPressed;
   final String text;
   final bool isLoading;
-  const CustomButton({
 
+  const CustomButton({
+    super.key,
     required this.onPressed,
     required this.text,
     this.isLoading = false,
@@ -14,13 +15,14 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(onPressed: isLoading ? null : onPressed,
-    style: ButtonStyles.elevatedButtonStyle,
-     child: isLoading 
-     ? CircularProgressIndicator(
-      valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-     )
-     : Text(text, style: ButtonStyles.buttonTextStyle),
-     );
+    return ElevatedButton(
+      onPressed: isLoading ? null : onPressed,
+      style: ButtonStyles.elevatedButtonStyle,
+      child: isLoading
+          ? const CircularProgressIndicator(
+              valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+            )
+          : Text(text, style: ButtonStyles.buttonTextStyle),
+    );
   }
 }
