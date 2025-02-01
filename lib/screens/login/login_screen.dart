@@ -10,21 +10,36 @@ class LoginScreen extends HookWidget {
     final login = useLogin(context);
 
     return Scaffold(
-        appBar: AppBar(title: Text('Login')),
-        body: Padding(padding: const EdgeInsets.all(16.0),
-        child: Column(
-            children: [
-                TextField(
-                    controller: usernameController,
-                    decoration: InputDecoration(labelText: 'username'),
-                ),
-                TextField(
-                    controller: passwordController,
-                    decoration: InputDecoration(labelText: 'Password'),
-                    obscureText: true,
+        appBar: AppBar(title: Text('Iniciar sesion')),
+        body: Padding(padding: const EdgeInsets.only(left: 20.0, right: 20.0,top: 100.0),
+        child: Center(
+          child: Column(
+              children: [
+                
+                  TextField(
+                      controller: usernameController,
+                      decoration: InputDecoration(
+                        labelText: 'Username',
+                        labelStyle: TextStyle(color: Colors.blueGrey),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+          borderSide: BorderSide(color: Colors.blue),
+                        ),
 
-                )
-            ],
+                      ),
+                  ),
+                  SizedBox(height: 30.0), // Espacio entre los dos TextField
+                  TextField(
+                      controller: passwordController,
+                      decoration: InputDecoration(labelText: 'Password'),
+                      obscureText: true,
+          
+                  )
+              ],
+          ),
         ),
         ),
     );
