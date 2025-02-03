@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-       home: LoginScreen(), // Establece la pantalla de login como la pantalla inicial
+       home: const LoginScreen(), // Establece la pantalla de login como la pantalla inicial
     );
   }
 

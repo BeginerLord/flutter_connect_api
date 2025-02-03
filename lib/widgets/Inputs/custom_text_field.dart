@@ -7,7 +7,7 @@ class CustomTextField extends StatelessWidget {
   final bool obscureText;
 
 //constructor 
-  CustomTextField({
+  const CustomTextField({super.key, 
     required this.controller,
     required this.labelText,
     this.obscureText = false,
@@ -19,13 +19,13 @@ class CustomTextField extends StatelessWidget {
     controller: controller,
     decoration: InputDecoration(
       labelText: labelText,
-      labelStyle: TextStyle(color: Colors.blueGrey),
+      labelStyle: const TextStyle(color: Colors.blueGrey),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(10.0),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(10.0),
-        borderSide: BorderSide(color: Colors.red),
+        borderSide: const BorderSide(color: Colors.red),
       ),
     ),
     obscureText: obscureText,
